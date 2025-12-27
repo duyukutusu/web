@@ -5,84 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Duyu Kutusu | Duyu Bütünleme ve Gelişim Asistanı</title>
     <meta name="description" content="Çocuğunuzun duyusal dünyasını keşfedin. Duyu testleri, evde uygulanabilir oyunlar ve uzman takibi tek uygulamada.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #FF8C42; /* Turuncu Tonu - Enerji ve Duyu */
-            --secondary: #4F46E5; /* Mavi - Güven */
-            --dark: #1F2937;
-            --light: #FFF7ED; /* Krem Rengi */
+            --primary: #189999; /* Turkuaz - İstenen Renk */
+            --primary-hover: #137a7a; /* Buton üzerine gelince koyulaşması için */
+            --dark: #2c3e50; /* Koyu Gri/Lacivert - Yazılar için */
+            --bg-color: #f8efd8; /* İstenen Arka Plan Rengi */
+            --white: #ffffff;
         }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Nunito', sans-serif; /* Font değişti */
             margin: 0;
             padding: 0;
-            background-color: var(--light);
+            background-color: var(--bg-color);
             color: var(--dark);
             text-align: center;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
+
         .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
         }
+
         .logo {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 10px;
             letter-spacing: -1px;
         }
+
         h1 {
             font-size: 2.5rem;
             margin-bottom: 15px;
             line-height: 1.2;
             color: var(--dark);
+            font-weight: 800;
         }
+
         .highlight {
             color: var(--primary);
         }
+
         p {
             font-size: 1.2rem;
-            color: #4B5563;
+            color: #5d6d7e;
             margin-bottom: 30px;
             line-height: 1.6;
+            font-weight: 600;
         }
+
         .cta-box {
-            background: white;
+            background: var(--white);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+            box-shadow: 0 15px 30px rgba(24, 153, 153, 0.15); /* Gölge de turkuaz tonlu */
             margin-bottom: 40px;
-            border: 2px solid #E5E7EB;
+            border: 2px solid rgba(24, 153, 153, 0.1);
         }
+
         .btn {
             display: inline-block;
             padding: 18px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1.1rem;
             transition: all 0.3s ease;
             margin: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
+
         .btn-primary {
             background-color: var(--primary);
-            color: white;
+            color: var(--white);
             border: 2px solid var(--primary);
         }
+
         .btn-secondary {
             background-color: transparent;
-            color: var(--secondary);
-            border: 2px solid var(--secondary);
+            color: var(--primary);
+            border: 2px solid var(--primary);
         }
+
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         }
+        
+        /* Hover durumunda renk değişimi */
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
         .features {
             display: flex;
             justify-content: center;
@@ -90,31 +116,35 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
+
         .feature-tag {
-            background: #EEF2FF;
-            color: var(--secondary);
+            background: rgba(24, 153, 153, 0.1); /* Turkuazın şeffaf hali */
+            color: var(--primary);
             padding: 8px 15px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
         }
+
         .book-section {
             margin-top: 30px;
-            border-top: 1px solid #E5E7EB;
+            border-top: 1px solid rgba(0,0,0,0.05);
             padding-top: 40px;
         }
+
         footer {
             margin-top: auto;
             padding: 30px;
-            font-size: 0.9rem;
-            color: #9CA3AF;
-            background: white;
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            background: var(--white);
         }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             p { font-size: 1rem; }
             .cta-box { padding: 25px; }
-            .btn { width: 80%; }
+            .btn { width: 100%; box-sizing: border-box; } /* Mobilde butonlar tam otursun */
         }
     </style>
 </head>
@@ -138,7 +168,7 @@
         </p>
 
         <div class="cta-box">
-            <h3 style="margin-top:0;">🧪 Demo Duyu Testini İnceleyin</h3>
+            <h3 style="margin-top:0; color:var(--primary);">🧪 Demo Duyu Testini İnceleyin</h3>
             <p style="font-size: 1rem; color: #666;">
                 Uygulama yayınlandığında çocuğunuza özel <strong>Duyu Profili Analizi</strong> yapmak için şimdiden yerinizi ayırtın.
             </p>
@@ -157,9 +187,8 @@
     <footer>
         &copy; 2025 Duyu Kutusu Teknoloji ve Danışmanlık. <br>
         <br>
-        <a href="https://www.instagram.com/uzm.fzt.erg.mervesecildisonmez/" style="color:#4F46E5; text-decoration:none; font-weight:bold;">Instagram: @duyukutusu</a>
+        <a href="https://www.instagram.com/uzm.fzt.erg.mervesecildisonmez/" style="color:var(--primary); text-decoration:none; font-weight:bold;">Instagram: @duyukutusu</a>
     </footer>
 
 </body>
-
 </html>
