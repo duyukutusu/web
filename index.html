@@ -8,16 +8,16 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --primary: #189999; /* Turkuaz */
             --primary-hover: #137a7a;
-            --dark: #2c3e50; /* Koyu Lacivert/Gri */
+            --dark: #2c3e50; /* Koyu Lacivert/Gri - Standart */
+            --darker: #1a252f; /* Daha Koyu - Ana Başlık İçin */
             --bg-color: #f8f4e9; /* Bej Arka Plan */
             --white: #ffffff;
-            --black: #000000; /* Tam Siyah */
         }
         
         body {
@@ -60,21 +60,28 @@
             object-fit: contain;
         }
 
+        /* ANA BAŞLIK GÜNCELLEMESİ (Daha Büyük ve Belirgin) */
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            color: var(--dark);
-            font-weight: 800;
+            font-size: 2.6rem; /* Büyütüldü */
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: var(--darker); /* Daha koyu renk */
+            font-weight: 800; /* En kalın font */
+            letter-spacing: -0.5px;
         }
 
         .highlight {
             color: var(--primary);
         }
 
-        /* ANA METİN KUTUSU (İKİ YANA YASLI) */
+        /* ORTAK METİN STİLİ (HER ŞEY JUSTIFY) */
+        p {
+            text-align: justify; /* Tüm paragraflar yaslandı */
+            line-height: 1.7;
+        }
+
+        /* İÇERİK KUTUSU */
         .content-box {
-            text-align: justify; /* Burası iki yana yaslı */
             background: rgba(255,255,255,0.6);
             padding: 30px;
             border-radius: 15px;
@@ -85,21 +92,21 @@
         .content-text {
             font-size: 1.1rem;
             color: #4a5568;
-            line-height: 1.8;
             font-weight: 600;
             margin-bottom: 15px;
         }
 
+        /* ARA BAŞLIK GÜNCELLEMESİ (Daha Zarif) */
         .sub-header {
-            font-size: 1.5rem;
-            color: var(--black);
-            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--dark); /* Siyah yerine koyu gri */
+            font-weight: 700; /* Matlıktan kurtarıldı */
             margin-bottom: 20px;
             display: block;
-            text-align: center; /* Başlık ortalı */
+            text-align: center; /* Başlıklar ortalı kalmalı */
         }
 
-        /* CTA (EYLEM) KUTUSU */
+        /* CTA KUTUSU */
         .cta-box {
             background: var(--white);
             padding: 40px;
@@ -107,9 +114,16 @@
             box-shadow: 0 15px 30px rgba(24, 153, 153, 0.1);
             margin-bottom: 40px;
             border: 2px solid rgba(24, 153, 153, 0.15);
-            text-align: center; /* BURASI ÖNEMLİ: İçindekileri zorla ortalar */
         }
 
+        /* KİTAP BÖLÜMÜ */
+        .book-section {
+            margin-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 40px;
+        }
+
+        /* BUTONLAR */
         .btn {
             display: inline-block;
             padding: 18px 35px;
@@ -144,6 +158,7 @@
             border-color: var(--primary-hover);
         }
 
+        /* ÖZELLİK ETİKETLERİ */
         .features {
             display: flex;
             justify-content: center;
@@ -163,12 +178,6 @@
             box-shadow: 0 4px 10px rgba(24, 153, 153, 0.2);
         }
 
-        .book-section {
-            margin-top: 30px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 40px;
-        }
-
         footer {
             margin-top: auto;
             padding: 30px;
@@ -176,9 +185,13 @@
             color: #7f8c8d;
             background: var(--white);
         }
+        
+        footer p {
+            text-align: center; /* Footer yazıları ortalı kalsın */
+        }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
+            h1 { font-size: 1.8rem; } /* Mobilde başlık boyutu */
             .content-text { font-size: 1rem; }
             .cta-box { padding: 25px; }
             .btn { width: 100%; box-sizing: border-box; }
@@ -203,7 +216,7 @@
             <span class="feature-tag">🏠 80+ Evde Aktivite</span>
         </div>
 
-        <h1>Davranışların Altındaki O Mesaj: <br><span class="highlight">Duyusal Sistem</span></h1>
+        <h1>Davranışların Altında Gizlenen O Mesaj: <br><span class="highlight">Duyusal Sistem</span></h1>
         
         <div class="content-box">
             <span class="sub-header">"Yaramazlık" mı, Yoksa "Duyusal Arayış" mı?</span>
@@ -224,7 +237,7 @@
         <div class="cta-box">
             <h2 style="margin-top:0; color:var(--primary); font-size: 1.5rem;">🧪 Demo testine hazır mısınız?</h2>
             
-            <p style="font-size: 1rem; color: #666; margin-bottom: 25px; text-align: center;">
+            <p style="font-size: 1rem; color: #666; margin-bottom: 25px; text-align: justify;">
                 Ebeveyn ve Çocuk karşılaştırmalı <strong>Demo Duyu Testi</strong> ile farkındalık yolculuğuna ilk adımınızı atın.
             </p>
             
@@ -233,7 +246,8 @@
 
         <div class="book-section">
             <h3 style="color:var(--dark);">Bilgi Güçtür</h3>
-            <p style="color: #666;">
+            
+            <p style="color: #666; text-align: justify;">
                 Merve Seçildi Sönmez'in kaleme aldığı <strong>"Duyu Kutusu"</strong> kitabı ile duyusal sistemimizi tanıyabilir ve çocuğunuz için evde uygulayabileceğiniz duyu bütünleme aktivitelerini keşfedebilirsiniz.
             </p>
             
