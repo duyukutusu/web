@@ -17,7 +17,7 @@
             --dark: #2c3e50; /* Koyu Lacivert/Gri */
             --bg-color: #f8f4e9; /* Bej Arka Plan */
             --white: #ffffff;
-            --coffee: #189999; /* Acı Kahve - Etiketler için */
+            --black: #000000; /* Tam Siyah */
         }
         
         body {
@@ -38,13 +38,13 @@
             padding: 20px;
         }
 
-        /* --- LOGO ALANI EKLENDİ --- */
+        /* LOGO ALANI */
         .logo-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px; /* Logo ve yazı arası boşluk */
-            margin-bottom: 25px;
+            gap: 15px; 
+            margin-bottom: 30px;
         }
 
         .logo-text {
@@ -55,14 +55,13 @@
         }
 
         .logo-img {
-            height: 60px; /* Logonun yüksekliği */
+            height: 60px;
             width: auto;
             object-fit: contain;
         }
-        /* -------------------------- */
 
         h1 {
-            font-size: 2.2rem; /* Başlık biraz daha kompakt */
+            font-size: 2.2rem;
             margin-bottom: 20px;
             line-height: 1.3;
             color: var(--dark);
@@ -73,25 +72,42 @@
             color: var(--primary);
         }
 
-        /* Yeni Metin Stili - Daha Okunaklı */
-        .content-text {
-            font-size: 1.15rem;
-            color: #4a5568; /* Biraz daha koyu gri */
+        /* ANA METİN KUTUSU (İKİ YANA YASLI) */
+        .content-box {
+            text-align: justify; /* Burası iki yana yaslı */
+            background: rgba(255,255,255,0.6);
+            padding: 30px;
+            border-radius: 15px;
             margin-bottom: 30px;
-            line-height: 1.7;
-            font-weight: 600;
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
+        .content-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.8;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .sub-header {
+            font-size: 1.5rem;
+            color: var(--black);
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center; /* Başlık ortalı */
+        }
+
+        /* CTA (EYLEM) KUTUSU */
         .cta-box {
             background: var(--white);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(78, 52, 46, 0.1); /* Hafif kahve tonlu gölge */
+            box-shadow: 0 15px 30px rgba(24, 153, 153, 0.1);
             margin-bottom: 40px;
             border: 2px solid rgba(24, 153, 153, 0.15);
+            text-align: center; /* BURASI ÖNEMLİ: İçindekileri zorla ortalar */
         }
 
         .btn {
@@ -136,16 +152,15 @@
             flex-wrap: wrap;
         }
 
-        /* ACI KAHVE ETİKETLER */
         .feature-tag {
-            background: var(--coffee); 
+            background: var(--primary); 
             color: var(--white);
             padding: 8px 16px;
-            border-radius: 50px; /* Daha yuvarlak */
+            border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 700;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(24, 153, 153, 0.2);
         }
 
         .book-section {
@@ -167,8 +182,6 @@
             .content-text { font-size: 1rem; }
             .cta-box { padding: 25px; }
             .btn { width: 100%; box-sizing: border-box; }
-            
-            /* Mobilde logo optimizasyonu */
             .logo-img { height: 40px; }
             .logo-text { font-size: 1.8rem; }
         }
@@ -187,24 +200,31 @@
             <span class="feature-tag">🧠 Duyu Kütüphanesi</span>
             <span class="feature-tag">🎯 Çocuk Takibi</span>
             <span class="feature-tag">📈 Gelişim Analizi</span>
-            <span class="feature-tag">🏠 80+ Evde Aktivite Rehberi</span>
+            <span class="feature-tag">🏠 80+ Evde Aktivite</span>
         </div>
 
-        <h1>Davranışların Altındaki Gizli Neden:
-        <br><span class="highlight">Duyusal Sistem</span></h1>
+        <h1>Davranışların Altındaki O Mesaj: <br><span class="highlight">Duyusal Sistem</span></h1>
         
-        <div class="content-text">
-            <p>
-                Çocuğunuzun sese, dokunmaya veya harekete verdiği aşırı tepkiler birer "yaramazlık" değil, beyninin dünyayı algılama biçimi olabilir. 
+        <div class="content-box">
+            <span class="sub-header">"Yaramazlık" mı, Yoksa "Duyusal Arayış" mı?</span>
+            
+            <p class="content-text">
+                Çocuğunuzun öfke nöbetleri, yemek ve kıyafet seçiciliği, aşırı hareketliliği veya seslere tepkisi her zaman bir "yaramazlık" ya da “şımarıklık” olmayabilir. Bu tepkiler, beyinlerinin dünyayı algılama biçimiyle, yani <strong>"Duyusal İşlemleme"</strong> süreciyle ilgili olabilir.
             </p>
-            <p>
-                <strong>Duyusal İşlemleme Problemleri</strong>, herhangi bir tanıya bağlı olmaksızın, normal gelişim gösteren çocuklarda da sıkça görülebilmektedir. Duyu Kutusu ile çocuğunuzun duyusal sistemini analiz edebilir, ona özel <strong>aktivite ve gelişim takibiyle</strong> potansiyelini doğru yönlendirebilirsiniz.
+            
+            <p class="content-text" style="background: #fff; padding:15px; border-left: 5px solid var(--primary); border-radius: 5px;">
+                🛑 <strong>Önemli:</strong> Duyusal işlemleme farklılıkları, sadece Otizm veya benzeri tanılara sahip çocuklarda görülmez. Gayet sağlıklı, normal gelişim gösteren her çocukta (ve yetişkinde) görülebilen bir durumdur.
+            </p>
+
+            <p class="content-text">
+                Duyu Kutusu ile çocuğunuzun duyusal sistemini analiz edebilir, ona özel <strong>aktivite ve gelişim takibiyle</strong> potansiyelini doğru yönlendirebilirsiniz.
             </p>
         </div>
 
         <div class="cta-box">
             <h2 style="margin-top:0; color:var(--primary); font-size: 1.5rem;">🧪 Demo testine hazır mısınız?</h2>
-            <p style="font-size: 1rem; color: #666; margin-bottom: 25px;">
+            
+            <p style="font-size: 1rem; color: #666; margin-bottom: 25px; text-align: center;">
                 Ebeveyn ve Çocuk karşılaştırmalı <strong>Demo Duyu Testi</strong> ile farkındalık yolculuğuna ilk adımınızı atın.
             </p>
             
@@ -213,7 +233,9 @@
 
         <div class="book-section">
             <h3 style="color:var(--dark);">Bilgi Güçtür</h3>
-            <p style="color: #666;">Merve Seçildi Sönmez'in kaleme aldığı <strong>"Duyu Kutusu"</strong> kitabı ile duyusal sistemimizi tanıyabilir ve çocuğunuz için evde uygulayabileceğiniz duyu bütünleme aktivitelerini keşfedebilirsiniz.</p>
+            <p style="color: #666;">
+                Merve Seçildi Sönmez'in kaleme aldığı <strong>"Duyu Kutusu"</strong> kitabı ile duyusal sistemimizi tanıyabilir ve çocuğunuz için evde uygulayabileceğiniz duyu bütünleme aktivitelerini keşfedebilirsiniz.
+            </p>
             
             <a href="https://www.shopier.com/duyukutusu/41874166" target="_blank" class="btn btn-secondary">📘 Kitabı İncele ve Satın Al</a>
         </div>
@@ -229,4 +251,3 @@
 
 </body>
 </html>
-
