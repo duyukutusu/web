@@ -3,316 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duyu Kutusu | Duyusal Gelişim ve Aktivite Asistanı</title>
-    <meta name="description" content="Duyusal işlemleme nedir? Çocuğunuzun duyusal profilini çıkarın, evde uygulanabilir aktivitelerle gelişimini takip edin.">
-    
+    <title>Duyu Kutusu | Uzm. Erg. Merve Sönmez</title>
+    <meta name="description" content="Otizm şüphesi, duyusal hassasiyet ve gelişim takibi için uzman ergoterapist desteği ve dijital analiz sistemi.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
-    <style>
-        /* GLOBAL AYARLAR */
-        *, *::before, *::after {
-            box-sizing: border-box; /* Taşmaları engellemek için kritik komut */
-        }
-
-        :root {
-            --primary: #189999; /* Turkuaz */
-            --primary-hover: #137a7a;
-            --dark: #2c3e50; /* Koyu Lacivert/Gri */
-            --darker: #1a252f; 
-            --bg-color: #f8f4e9; /* Bej Arka Plan */
-            --white: #ffffff;
-        }
-        
-        body {
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--dark);
-            text-align: center; /* HER ŞEY ORTALI */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            width: 100%;
-        }
-
-        /* LOGO ALANI */
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px; 
-            margin-bottom: 30px;
-        }
-
-        .logo-text {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -1px;
-        }
-
-        .logo-img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* ANA BAŞLIK */
-        h1 {
-            font-size: 2.4rem;
-            margin-bottom: 25px;
-            line-height: 1.2;
-            color: var(--darker);
-            font-weight: 750;
-            letter-spacing: -0.5px;
-            text-align: center; /* Garanti ortalama */
-        }
-
-        .highlight {
-            color: var(--primary);
-        }
-
-        /* GENEL PARAGRAF STİLİ (HEPSİ ORTALI) */
-        p {
-            text-align: center; /* Justify kaldırıldı, Center yapıldı */
-            line-height: 1.6;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* İÇERİK KUTUSU */
-        .content-box {
-            background: rgba(255,255,255,0.6);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center; /* Kutu içi ortalı */
-        }
-
-        .content-text {
-            font-size: 1.1rem;
-            color: #4a5568;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        /* ÖNEMLİ KUTUSU */
-        .important-box {
-            background: #fff;
-            padding: 20px;
-            border: 2px solid var(--primary); /* Sol çizgi yerine tam çerçeve daha şık durur ortalıda */
-            border-radius: 15px;
-            margin-top: 20px;
-        }
-
-        /* ARA BAŞLIK */
-        .sub-header {
-            font-size: 1.4rem;
-            color: var(--dark);
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: block;
-            text-align: center;
-        }
-
-        /* CTA KUTUSU (TEST KUTUSU) */
-        .cta-box {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(24, 153, 153, 0.1);
-            margin-bottom: 40px;
-            border: 2px solid rgba(24, 153, 153, 0.15);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* KİTAP KUTUSU (YENİ TASARIM - CTA KUTUSU İLE AYNI STİL) */
-        .book-section {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(78, 52, 46, 0.08); /* Hafif farklı bir gölge tonu */
-            margin-bottom: 40px;
-            border: 2px solid rgba(24, 153, 153, 0.15);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* BUTONLAR (Merkezleme Sorunu Çözüldü) */
-        .btn {
-            display: inline-block;
-            padding: 16px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin: 15px auto; /* Auto margin ortalar */
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            max-width: 100%; /* Mobilde taşmayı engeller */
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            border-color: var(--primary-hover);
-        }
-
-        /* ÖZELLİK ETİKETLERİ */
-        .features {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .feature-tag {
-            background: var(--primary); 
-            color: var(--white);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(24, 153, 153, 0.2);
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 30px;
-            font-size: 0.95rem;
-            color: #7f8c8d;
-            background: var(--white);
-            text-align: center;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .content-text { font-size: 1rem; }
-            .cta-box, .book-section { padding: 30px 20px; } /* Mobilde padding ayarı */
-            .btn { width: 100%; } /* Mobilde buton tam genişlik */
-            .logo-img { height: 40px; }
-            .logo-text { font-size: 1.8rem; }
-        }
-    </style>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSHVTQNWFS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-MSHVTQNWFS');
-    </script>
-
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "uwrik0zhh6");
-    </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo" class="logo-img">
-            <div class="logo-text">Duyu Kutusu</div>
-            <img src="logo.png" alt="Logo" class="logo-img">
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">DUYU KUTUSU</div>
+            <div class="expert-name">Uzm. Erg. Merve S. Sönmez (Hacettepe 1.si)</div>
         </div>
-        
-        <div class="features">
-            <span class="feature-tag">🧠 Duyu Kütüphanesi</span>
-            <span class="feature-tag">🎯 Çocuk Takibi</span>
-            <span class="feature-tag">📈 Gelişim Analizi</span>
-            <span class="feature-tag">🏠 80+ Evde Uygulanabilir Aktivite</span>
-        </div>
+    </header>
 
-        <h1>Davranışların Altında Gizlenen O Mesaj: <br><span class="highlight">Duyusal Sistem</span></h1>
-        
-        <div class="content-box">
-            <span class="sub-header">"Yaramazlık" mı, Yoksa "Duyusal Arayış" mı?</span>
+    <main class="hero">
+        <div class="container hero-content">
+            <h1 class="headline">Çocuğunuzun "Yaramazlıklarını" Anlamlandıralım.</h1>
+            <p class="sub-headline">Yaramazlık değil, ihtiyaç. İnatlaşma değil, uyum. Bilimsel yöntemlerle çocuğunuzun dünyasını keşfedin.</p>
             
-            <p class="content-text">
-                Çocuğunuzun öfke nöbetleri, yemek ve kıyafet seçiciliği, aşırı hareketliliği veya seslere tepkisi her zaman bir "yaramazlık" ya da “şımarıklık” olmayabilir. Bu tepkiler, beyinlerinin dünyayı algılama biçimiyle, yani <strong>"Duyusal İşlemleme"</strong> süreciyle ilgili olabilir.
-            </p>
-            
-            <div class="important-box">
-                <p class="content-text">
-                    🛑 <strong>Önemli:</strong> Duyusal işlemleme farklılıkları, sadece Otizm veya benzeri tanılara sahip çocuklarda görülmez. Normal gelişim gösteren çocuklarda ve yetişkinlerde de görülebilen bir durumdur.
+            <div class="cards-wrapper">
+                
+                <div class="card premium-card">
+                    <div class="card-badge">Özel İlgi İsteyenler İçin</div>
+                    <div class="icon-box"><i class="fa-solid fa-user-doctor"></i></div>
+                    <h3>Birebir Ebeveyn Danışmanlığı</h3>
+                    <p>Merve Hoca ile 45 dakikalık online görüşme. Sorularınızı sorun, ev içi düzenleme ve davranış yönetimi reçetenizi alın.</p>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Kişiye Özel Analiz</li>
+                        <li><i class="fa-solid fa-check"></i> Anında Soru-Cevap</li>
+                        <li><i class="fa-solid fa-check"></i> Ev Düzenleme Tavsiyeleri</li>
+                    </ul>
+                    <a href="SENIN_SHOPIER_LINKIN" class="btn btn-primary">Randevu Oluştur &rarr;</a>
+                </div>
 
-                </p>
+                <div class="card free-card">
+                    <div class="card-badge free-badge">Popüler</div>
+                    <div class="icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Duyu Analiz Testi</h3>
+                    <p>60 soruluk bilimsel algoritma ile çocuğunuzun duyusal profilini çıkarın. Davranışların altındaki nedeni 10 dakikada öğrenin.</p>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> %100 Ücretsiz Analiz</li>
+                        <li><i class="fa-solid fa-check"></i> Anında Rapor Mailinizde</li>
+                        <li><i class="fa-solid fa-check"></i> 60 Soruluk Kapsamlı Tarama</li>
+                    </ul>
+                    <a href="SENIN_TALLY_LINKIN" class="btn btn-outline">Testi Ücretsiz Başlat</a>
+                </div>
+
             </div>
-
-            <p class="content-text" style="margin-top: 20px;">
-                Duyu Kutusu ile çocuğunuzun duyusal sistemini analiz edebilir, ona özel aktivite ve gelişim takibiyle potansiyelini doğru yönlendirebilirsiniz.
-            </p>
         </div>
+    </main>
 
-        <div class="cta-box">
-            <h2 style="margin-top:0; color:var(--primary); font-size: 1.5rem;">🧪 Demo Duyu Testine Hazır Mısınız? </h2>
-            
-            <p style="font-size: 1rem; color: #666; margin-bottom: 25px;">
-                Ebeveyn ve çocuk karşılaştırmalı <br><strong>Demo Duyu Testi</strong> ile farkındalık yolculuğuna ilk adımınızı atın.
-            </p>
-            
-            <a href="https://tally.so/r/gDe7jO" target="_blank" class="btn btn-primary">👉 Testi Başlat & Erken Erişim</a>
+    <section class="trust-section">
+        <div class="container">
+            <p class="trust-text"><i class="fa-solid fa-quote-left"></i> Çocuğu düzeltmeye çalışmayın, onu anlamaya çalışın. Davranış bir sonuçtur, nedenleri bulmak bizim işimiz. <i class="fa-solid fa-quote-right"></i></p>
+            <div class="credentials">
+                <span><i class="fa-solid fa-graduation-cap"></i> Hacettepe Üni. Bölüm 1.si</span>
+                <span><i class="fa-solid fa-certificate"></i> Çift Anadal & Yüksek Lisans</span>
+                <span><i class="fa-solid fa-users"></i> +1000 Danışan Tecrübesi</span>
+            </div>
         </div>
-
-        <div class="book-section">
-            <h2 style="margin-top:0; color:var(--primary); font-size: 1.5rem;">📘 Bilgi Güçtür</h2>
-            
-            <p style="font-size: 1rem; color: #666; margin-bottom: 25px;">
-                Merve Seçildi Sönmez'in kaleme aldığı <br><strong>"Duyu Kutusu"</strong> e-kitabı ile duyusal sistemimizi tanıyabilir ve çocuğunuz için evde birlikte uygulayabileceğiniz aktiviteleri keşfedebilirsiniz.
-            </p>
-            
-            <a href="https://www.shopier.com/duyukutusu/41874166" target="_blank" class="btn btn-secondary">➡️ Kitabı İncele ve Satın Al</a>
-        </div>
-    </div>
+    </section>
 
     <footer>
-        &copy; 2025 Duyu Kutusu 
-        <p style="margin: 10px 0; font-weight: 600; color: #5d6d7e;">
-            Uzm. Erg. Uzm. Fzt. Merve Seçildi Sönmez
-        </p>
-        <a href="https://www.instagram.com/uzm.fzt.erg.mervesecildisonmez/" style="color:var(--primary); text-decoration:none; font-weight:bold;">Instagram: @duyukutusu</a>
+        <div class="container">
+            <p>&copy; 2026 Duyu Kutusu. Tüm hakları saklıdır. | KVKK Aydınlatma Metni</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
     </footer>
 
 </body>
 </html>
-
