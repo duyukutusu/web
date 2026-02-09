@@ -1,0 +1,250 @@
+:root {
+    --primary-color: #2c3e50; /* Koyu Lacivert - Otorite */
+    --accent-color: #e67e22; /* Turuncu - Sıcaklık/Hareket */
+    --bg-color: #fdfbf7; /* Kırık Beyaz - Göz Yormayan */
+    --text-color: #333;
+    --white: #ffffff;
+    --gray: #7f8c8d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 0;
+    background-color: transparent;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+.expert-name {
+    font-size: 0.9rem;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    padding: 60px 0 100px 0;
+    text-align: center;
+}
+
+.headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.sub-headline {
+    font-size: 1.1rem;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+/* Kart Yapısı */
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.premium-card {
+    border-top: 5px solid var(--primary-color);
+}
+
+.free-card {
+    border-top: 5px solid var(--accent-color);
+}
+
+.card-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.free-badge {
+    background: var(--accent-color);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.free-card .icon-box {
+    color: var(--accent-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 25px;
+    flex-grow: 1; /* İçeriği eşitler */
+}
+
+.features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.features li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.features i {
+    color: #27ae60;
+    margin-right: 10px;
+}
+
+/* Butonlar */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #1a252f;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* Güven Bölümü */
+.trust-section {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.trust-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.credentials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.credentials i {
+    color: var(--accent-color);
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+.socials {
+    margin-top: 15px;
+}
+
+.socials a {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: var(--accent-color);
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .headline { font-size: 2rem; }
+    .cards-wrapper { flex-direction: column; align-items: center; }
+    .card { width: 100%; }
+}
