@@ -27,11 +27,12 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uwrik0zhh6");
     </script>
+
     <style>
         :root {
-            --primary: #1a252f; /* Koyu Lacivert (Otorite) */
-            --accent: #d4af37; /* Altın Sarısı (Başarı/Birincilik) */
-            --bg-color: #fdfbf7; /* Kırık Beyaz (Premium Kağıt Hissi) */
+            --primary: #1a252f; /* Koyu Lacivert / Siyaha Yakın */
+            --accent: #d4af37; /* Altın Sarısı */
+            --bg-color: #fdfbf7; /* Kırık Beyaz */
             --text-color: #333;
             --white: #ffffff;
             --gray: #7f8c8d;
@@ -56,11 +57,8 @@
             width: 100%;
         }
 
-        /* NAVBAR & HEADER */
-        header {
-            padding: 20px 0;
-            background: transparent;
-        }
+        /* HEADER */
+        header { padding: 20px 0; background: transparent; }
 
         .header-content {
             display: flex;
@@ -91,10 +89,7 @@
         }
 
         /* HERO SECTION */
-        .hero {
-            padding: 60px 0 80px 0;
-            text-align: center;
-        }
+        .hero { padding: 60px 0 80px 0; text-align: center; }
 
         h1 {
             font-family: 'Playfair Display', serif;
@@ -111,12 +106,9 @@
             margin: 0 auto 50px auto;
         }
 
-        .highlight {
-            color: var(--accent);
-            font-style: italic;
-        }
+        .highlight { color: var(--accent); font-style: italic; }
 
-        /* KART YAPISI (İKİ KAPI) */
+        /* CARDS CONTAINER */
         .cards-container {
             display: flex;
             justify-content: center;
@@ -137,6 +129,7 @@
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
+            margin-top: 20px;
         }
 
         .card:hover {
@@ -144,9 +137,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .card-header {
-            margin-bottom: 20px;
-        }
+        .card-header { margin-bottom: 20px; }
 
         .card-icon {
             font-size: 2rem;
@@ -168,11 +159,7 @@
             flex-grow: 1;
         }
 
-        .features-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
+        .features-list { list-style: none; margin-bottom: 30px; }
         .features-list li {
             margin-bottom: 10px;
             font-size: 0.9rem;
@@ -181,37 +168,38 @@
             align-items: center;
             gap: 10px;
         }
+        .features-list i { font-size: 0.8rem; }
 
-        .features-list i {
-            color: var(--accent);
-            font-size: 0.8rem;
-        }
+        /* --- ÖZEL RENK AYARLARI --- */
 
-        /* PREMIUM KART ÖZELLEŞTİRMELERİ */
-        .premium-card {
-            border-top: 4px solid var(--primary);
-        }
+        /* SOL KUTU (PREMIUM) - KOYU TONLAR */
+        .premium-card { border-top: 4px solid var(--primary); }
         .premium-card .card-icon { color: var(--primary); }
-        
-        /* FREE KART ÖZELLEŞTİRMELERİ */
-        .free-card {
-            border-top: 4px solid var(--accent);
-        }
-        .free-card .card-icon { color: var(--accent); }
+        .premium-card .features-list i { color: var(--primary); }
 
+        /* SAĞ KUTU (FREE) - GOLD TONLAR */
+        .free-card { border-top: 4px solid var(--accent); }
+        .free-card .card-icon { color: var(--accent); }
+        .free-card h3 { color: var(--accent); }
+        .free-card .features-list i { color: var(--accent); }
+
+        /* BADGE */
         .badge {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--primary);
             color: var(--white);
-            padding: 4px 12px;
+            padding: 5px 15px;
             font-size: 0.75rem;
             font-weight: 600;
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
+            width: max-content;
+            z-index: 10;
         }
 
         .badge-free {
@@ -219,7 +207,7 @@
             color: var(--primary);
         }
 
-        /* BUTONLAR */
+        /* BUTONLAR (DÜZELTİLDİ) */
         .btn {
             display: block;
             width: 100%;
@@ -231,25 +219,30 @@
             transition: all 0.3s;
         }
 
+        /* RANDEVU BUTONU (Primary) */
         .btn-primary {
-            background-color: var(--primary);
-            color: var(--white);
+            background-color: var(--primary); /* Koyu Arka Plan */
+            color: var(--white); /* Beyaz Yazı */
+            border: 2px solid var(--primary);
         }
+        /* DÜZELTME BURADA YAPILDI: ARKA PLAN BEYAZ, YAZI KOYU */
         .btn-primary:hover {
-            background-color: #121a21;
+            background-color: #fff;
+            color: var(--primary);
         }
 
+        /* TEST BUTONU (Outline) */
         .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--accent);
-            color: #b89324;
-        }
-        .btn-outline:hover {
             background-color: var(--accent);
             color: var(--white);
+            border: 2px solid var(--accent);
+        }
+        .btn-outline:hover {
+            background-color: transparent;
+            color: var(--accent);
         }
 
-        /* CREDENTIALS SECTION */
+        /* FOOTER & TRUST SECTION */
         .trust-section {
             background: var(--white);
             padding: 50px 0;
@@ -257,7 +250,6 @@
             border-top: 1px solid #eee;
             text-align: center;
         }
-
         .credential-grid {
             display: flex;
             justify-content: center;
@@ -265,7 +257,6 @@
             gap: 20px;
             margin-top: 20px;
         }
-
         .credential-item {
             background: var(--bg-color);
             padding: 15px 25px;
@@ -275,11 +266,7 @@
             font-weight: 500;
             border: 1px solid #eee;
         }
-
-        .credential-item i {
-            color: var(--accent);
-            margin-right: 8px;
-        }
+        .credential-item i { color: var(--accent); margin-right: 8px; }
 
         footer {
             margin-top: auto;
@@ -289,12 +276,11 @@
             text-align: center;
             font-size: 0.85rem;
         }
-        
         footer a { color: var(--accent); text-decoration: none; }
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .card { max-width: 100%; }
+            .card { max-width: 100%; margin-bottom: 20px;}
         }
     </style>
 </head>
@@ -361,7 +347,7 @@
                 <div class="credential-item"><i class="fa-solid fa-medal"></i> Bahçeşehir Üni. Ergoterapi Bölüm 1.'si</div>
                 <div class="credential-item"><i class="fa-solid fa-user-graduate"></i> Çift Lisans & Çift Yüksek Lisans</div>
                 <div class="credential-item"><i class="fa-solid fa-utensils"></i> S.O.S Beslenme Terapisti</div>
-                <div class="credential-item"><i class="fa-solid fa-users"></i> +1000 Klinik Vaka Tecrübesi</div>
+                <div class="credential-item"><i class="fa-solid fa-users"></i> +1200 Klinik Vaka Tecrübesi</div>
             </div>
         </div>
     </section>
